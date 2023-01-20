@@ -144,12 +144,34 @@ background-color: white;
 
  }
  .fetchdata{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:10px;
+    row-gap: 40px;
     height: 700px;
     width: 100%;
     /* border: 1px solid red; */
     overflow: scroll;
     border-radius: 15px;
  }
+ .fetchdata>div{
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-bottom: 10px;
+}
+.fetchdata>div> img{
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+.fetchdata >div>h5{
+    margin-left: 10px;
+}
+.fetchdata>div>p {
+    margin-left: 10px;
+}
+.fetchdata>div>h3{
+    margin-left: 10px;
+}
 
  .edit{
     height: 250px;

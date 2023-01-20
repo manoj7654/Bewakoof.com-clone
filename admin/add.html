@@ -18,9 +18,13 @@
         <h1>Clothing Kedd</h1>
         <div class="crud-list">
           <div>
-            <div><i class="bx bx-grid-alt"></i> <a href="homepage.html">Dashboard</a></div>
             <div>
-              <i class="bx bx-folder-plus"></i> <a href="add.html">Add Product</a>
+              <i class="bx bx-grid-alt"></i>
+              <a href="homepage.html">Dashboard</a>
+            </div>
+            <div>
+              <i class="bx bx-folder-plus"></i>
+              <a href="add.html">Add Product</a>
             </div>
             <div>
               <i class="bx bx-edit-alt"></i>
@@ -64,27 +68,28 @@
           <div class="container-mid-bottom">
             <div class="fetch">
               <div id="edit"><h2>Updated Data List</h2></div>
-              <div class="fetchdata"></div>
+              <div class="fetchdata">
+
+              </div>
             </div>
             <div class="edit">
               <div><h4>Add Product</h4></div>
 
               <div class="form-container">
                 <form>
-                  <input required type="text" name="name" placeholder="Title" />
                   <input
                     required
                     type="text"
-                    name="email"
-                    placeholder="Img url"
+                    name="title"
+                    placeholder="Title"
                   />
                   <input
                     required
-                    type="number"
-                    name="mrp"
-                    id="MRP"
-                    placeholder="MRP"
+                    type="text"
+                    name="image"
+                    placeholder="Img url"
                   />
+                  <input required type="number" name="mrp" placeholder="MRP" />
                   <input
                     required
                     type="text"
@@ -94,39 +99,34 @@
                   <input
                     required
                     type="text"
-                    name="Category"
+                    name="category"
                     placeholder="Category"
                   />
                   <input
                     required
                     type="text"
-                    name="Gender"
+                    name="gender"
                     placeholder="Gender"
                   />
                   <input
                     required
                     type="text"
-                    name="confirmpwd"
+                    name="brand"
                     placeholder="Brand"
                   />
                   <input
                     required
                     type="text"
-                    name="confirmpwd"
+                    name="design"
                     placeholder="Design"
                   />
                   <input
                     required
                     type="text"
-                    name="confirmpwd"
+                    name="rating"
                     placeholder="Rating"
                   />
-                  <input
-                    type="submit"
-                    name="submit"
-                    value="Add Product"
-                    id="submit-btn"
-                  />
+                  <input type="submit" name="submit" value="Add Product" id="submit_btn" />
                 </form>
               </div>
             </div>
@@ -136,3 +136,4 @@
     </div>
   </body>
 </html>
+<script src="addproduct.js"></script>
