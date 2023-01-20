@@ -4,27 +4,27 @@ body {
     background-color: rgb(255, 255, 255);
     text-rendering: optimizelegibility;
 }
-.navbar{
+#footer{
     /* height: 1000px; */
     width: 100%;
     border: 1px solid red;
     padding-bottom: 50px;
     background-color: #181818;
 }
-.navbar_first{
+.footer_first{
     /* height: 1000px; */
     width: 80%;
     /* border: 1px solid yellow; */
     margin: auto;
 }
-.navbar_first>img{
+.footer_first>img{
    padding-top: 100px;
 }
 #logo>a{
     color: yellow;
     text-decoration: none;
 }
-.navbar_first>div{
+.footer_first>div{
   display: flex;
   justify-content: space-around;
 }
