@@ -16,7 +16,7 @@ adminproduct.get("/allproducts",async(req,res)=>
   
 })
 
-// adminproduct.use(adminAuthenticate)
+adminproduct.use(adminAuthenticate)
 
 adminproduct.post("/create",async(req,res)=>
 {
@@ -27,9 +27,9 @@ adminproduct.post("/create",async(req,res)=>
         const newproduct=new Productmodel(body)
         await newproduct.save()
         
-        res.json(' new products added')
+        res.json({message:"Prooduct has been added"})
     } catch (error) {
-        res.json("Cannot Create new Product")
+        res.json({mesage:"Cannot Create new Product"})
     }
 
    
@@ -43,9 +43,9 @@ adminproduct.patch("/edit/:id", async(req,res)=>{
 
     try {
         await Productmodel.findByIdAndUpdate({_id:ID},body)
-        res.send({"message":`updated the data of ID:==>> ${ID}`})
+        res.json({message:"Product has been update"})
     } catch (error) {
-        res.send({"message":"cannot update the product"})
+        res.json({message:"cannot update the product"})
     }
   
 })
@@ -53,18 +53,30 @@ adminproduct.patch("/edit/:id", async(req,res)=>{
 
 adminproduct.delete("/delete/:id", async(req,res)=>
 {
-    const ID=req.params.id
-    console.log(ID)
+    const Id=req.params.id
+    console.log(Id)
 
     try {
-        await Productmodel.findByIdAndDelete({_id:ID})
-        res.send({"message":`deleted the item id ${ID}`})
+        await Productmodel.findByIdAndDelete({_id:Id})
+        res.json({message:`Product has been delted`})
     } catch (error) {
-        res.send( {"message":"cannot delete "})
+        res.json( {message:"cannot delete "})
     }
     
 })
-
+// adminproduct.get("/sort",async(req,res)=>{
+//     let sortby=req.query.sortBy;
+//     let order=req.query.order
+//     try {
+//         if(sortby=="Price"){
+//         let result=await Productmodel.find().sort({Price:order})
+//         res.send(result)
+//         }
+//     } catch (error) {
+//         console.log({"err":"something went wrong"});
+//         console.log(error)
+//     }
+// })
 module.exports={
     adminproduct
 }

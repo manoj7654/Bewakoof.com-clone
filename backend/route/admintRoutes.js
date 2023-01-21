@@ -37,14 +37,14 @@ adminRouter.post("/login",async(req,res)=>{
             bcrypt.compare(password,user[0].password,async(err,result)=>{
                 if(result){
                     const AdminToken=jwt.sign({course:"backend"},process.env.key)
-                    res.send({message:"Login Success ","AdminToken":AdminToken})
+                    res.json({message:"Login Success ","AdminToken":AdminToken})
                 }else{
-                    res.send("Wrong credenatial")
+                    res.json({message:"Wrong credenatial"})
                 }
             })
           
         }else{
-            res.send("Wrong credential")
+            res.json({message:"Wrong credenatial"})
         }
     } catch (err) {
         console.log(err)
