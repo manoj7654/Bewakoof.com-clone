@@ -33,7 +33,7 @@
                         <a href="">Setting</a></div>
                 </div>
                 <div class="log-out"><i class="bx bx-log-out"></i>
-                    <a href="#">Logout</a>
+                    <a href="../index.html">Logout</a>
                 </div>
             </div>
         </div>
@@ -52,19 +52,19 @@
                 <div class="container-mid-top">
                     <div>
                         <h3>Total Items</h3>
-                        <h1>100</h1>
+                        <h1 id="datashow"></h1>
                     </div>
                     <div>
                         <h3>Newly Added</h3>
-                        <h1>2</h1>
+                        <h1 id="added"></h1>
                     </div>
                     <div>
                         <h3>Total Edited</h3>
-                        <h1>1</h1>
+                        <h1 id="edit">1</h1>
                     </div>
                     <div>
                         <h3>Deleted Items</h3>
-                        <h1>2</h1>
+                        <h1 id="deletedata" >2</h1>
                     </div>
                 </div>
                 <div class="container-mid-bottom">
@@ -80,3 +80,13 @@
 </body>
 
 </html>
+<script>
+    let showdata=localStorage.getItem("data")
+    document.querySelector("#datashow").innerText=showdata
+    let deletedata=localStorage.getItem("count")
+    document.querySelector("#deletedata").innerText=deletedata
+    let addData=localStorage.getItem("addData")
+    document.querySelector("#added").innerText=addData
+    let editData=localStorage.getItem("editData")
+    document.querySelector("#edit").innerText=editData
+</script>

@@ -1,7 +1,11 @@
+
+/*.............................AddData.............................*/
+let addData=0;
 let result = document.querySelector("form");
 result.addEventListener("submit", myfun);
 
 async function myfun(event) {
+ 
   event.preventDefault();
   let obj = {
     Title: result.title.value,
@@ -17,31 +21,42 @@ async function myfun(event) {
   console.log(obj);
   let data = await add(obj);
   console.log(data);
-  //  alert("Product added")
+  getData()
+   if(data.message="Prooduct has been added"){
+    alert(data.message)
+   }else{
+    alert(data.message)
+   }
 }
 async function add(obj) {
+  
   try {
     let result = await fetch("http://localhost:7500/adminproduct/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Authorization:`${localStorage.getItem("token")}`
+        Authorization:`${localStorage.getItem("token")}`
       },
       body: JSON.stringify(obj),
     });
-
+    // console.log(localStorage.getItem("token"))
+    addData++
+localStorage.setItem("addData",addData)
     return result.json();
+  
   } catch (err) {
     console.log(err);
   }
-}
-let bag;
+}  
+/*...............................FetchData......................................*/
+
 async function getData() {
   try {
     let res = await fetch("http://localhost:7500/adminproduct/allproducts");
     let data = await res.json();
     console.log(data);
     bag=data
+    localStorage.setItem("data",bag.length)
     displayData(bag);
     
   } catch (error) {
@@ -51,7 +66,7 @@ async function getData() {
 getData();
 
 function displayData(bag) {
-  // document.querySelector("fetchdata").innerHTML=""
+  document.querySelector(".fetchdata").innerHTML=""
   console.log(bag)
   bag.forEach((ele) => {
     let div = document.createElement("div");
@@ -75,23 +90,4 @@ function displayData(bag) {
   });
 }
 
-let edit=document.querySelector("form")
-result.addEventListener("submit",my)
 
-function my(e){
-    e.preventDefault()
-    console.log("hii")
-    let editObj={
-     Id:edit.id.value,
-    Title: edit.title.value,
-    Img_url: edit.image.value,
-    Mrp: edit.mrp.value,
-    Price: edit.price.value,
-    Category: edit.category.value,
-    Gender: edit.gender.value,
-    Brand: edit.brand.value,
-    Design: edit.design.value,
-    Rating: edit.rating.value,
-    }
-    console.log(editObj)
-}
