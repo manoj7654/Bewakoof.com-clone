@@ -5,8 +5,9 @@ const productRouter=express.Router()
 
 
 productRouter.get("/alldata",async(req,res)=>{
+    const query=req.query
    try {
-       const result= await Productmodel.find()
+       const result= await Productmodel.find(query)
        res.send(result)
    } catch (err) {
     console.log(err)
@@ -16,41 +17,74 @@ productRouter.get("/alldata",async(req,res)=>{
 })
 
 
-// productRouter.post("/create",async(req,res)=>{
-//     const body=req.body
-//    try {
-//        const result= new Productmodel(body)
-//        await result.save()
-//        res.send("product added")
-//    } catch (err) {
-//     console.log(err)
-//     console.log({"err":"Something went wrong"})
-//    }
-
-// })
-// productRouter.patch("/edit/:id",async(req,res)=>{
-//     const Id=req.params.id;
-//     const body=req.body;
+productRouter.get("/search_gender",async(req,res)=>{
+    const query=req.query.q
+    
+    try {
+        
+        let result=await Productmodel.find({Gender:{$regex:query,$options:"i"}})
+        res.send(result)
+       
+    } catch (error) {
+        console.log({"err":"something went wrong"});
+        console.log(error)
+    }
+})
+productRouter.get("/search_category",async(req,res)=>{
+    const query=req.query.q
+    
+    try {
+        
+        let result=await Productmodel.find({Category:{$regex:query,$options:"i"}})
+        res.send(result)
+       
+    } catch (error) {
+        console.log({"err":"something went wrong"});
+        console.log(error)
+    }
+})
+// productRouter.get("/price",async(req,res)=>{
+//     const {price_low,price_high}=req.query
 //     try {
-//         await Productmodel.findByIdAndUpdate({_id:Id},body)
-//         res.send("Product has been update")
-//     } catch (err) {
-//         console.log(err)
-//     console.log({"err":"Something went wrong"})
+//         if(price_low && price_high){
+//             let result=await Productmodel.find({Price:{$gte:price_low,$lte:price_high}}).sort({Price:-1})
+//             res.send(result)
+           
+//         }
+      
+//     } catch (error) {
+//         console.log({"err":"something went wrong"});
+//         console.log(error)
 //     }
 // })
-
-
-// productRouter.delete("/delete/:id",async(req,res)=>{
-//     const Id=req.params.id;
-  
-//     try {
-//         await Productmodel.findByIdAndDelete({_id:Id})
-//         res.send("Product has been deleted")
-//     } catch (err) {
-//         console.log(err)
-//     console.log({"err":"Something went wrong"})
-//     }
-// })
-
+productRouter.get("/price_low",async(req,res)=>{
+   
+    try {
+            let result=await Productmodel.find().sort({Price:1})
+            res.send(result)
+    } catch (error) {
+        console.log({"err":"something went wrong"});
+        console.log(error)
+    }
+})
+productRouter.get("/price_high",async(req,res)=>{
+ 
+    try {
+            let result=await Productmodel.find().sort({Price:-1})
+            res.send(result)
+    } catch (error) {
+        console.log({"err":"something went wrong"});
+        console.log(error)
+    }
+})
+productRouter.get("/price_high",async(req,res)=>{
+ 
+    try {
+            let result=await (await Productmodel.find()).filter
+            res.send(result)
+    } catch (error) {
+        console.log({"err":"something went wrong"});
+        console.log(error)
+    }
+})
 module.exports={productRouter}

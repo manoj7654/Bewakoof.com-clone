@@ -2,7 +2,7 @@ const mongoose=require("mongoose")
 
 const userShcema=mongoose.Schema({
     name:{type:String, require:true},
-    number:{type:Number,require:true},
+    mobile:{type:Number,require:true},
     email:{type:String,require:true},
     password:{type:String,require:true}
    
