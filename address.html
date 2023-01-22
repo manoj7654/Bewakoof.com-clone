@@ -31,8 +31,9 @@
 <script>
       let placed=document.querySelector("form");
     placed.addEventListener("submit",place);
-    function place()
+    function place(ee)
     {
+        e.preventDefault()
         alert("Address added");
         location.replace("payment.html")
     }
