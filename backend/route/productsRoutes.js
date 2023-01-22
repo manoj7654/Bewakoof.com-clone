@@ -77,14 +77,57 @@ productRouter.get("/price_high",async(req,res)=>{
         console.log(error)
     }
 })
-productRouter.get("/price_high",async(req,res)=>{
- 
+productRouter.get("/bewacoof",async(req,res)=>{
+    
+    
     try {
-            let result=await (await Productmodel.find()).filter
-            res.send(result)
+        
+        let result=await Productmodel.find({Brand:"Bewacoof"})
+        res.send(result)
+       
     } catch (error) {
         console.log({"err":"something went wrong"});
         console.log(error)
     }
 })
+productRouter.get("/tistabene",async(req,res)=>{
+    
+    
+    try {
+        
+        let result=await Productmodel.find({Brand:"TISTABENE"})
+        res.send(result)
+       
+    } catch (error) {
+        console.log({"err":"something went wrong"});
+        console.log(error)
+    }
+})
+productRouter.get("/male",async(req,res)=>{
+    
+    
+    try {
+        
+        let result=await Productmodel.find({Gender:"Male"})
+        res.send(result)
+       
+    } catch (error) {
+        console.log({"err":"something went wrong"});
+        console.log(error)
+    }
+})
+productRouter.get("/female",async(req,res)=>{
+    
+    
+    try {
+        
+        let result=await Productmodel.find({Gender:"Female"})
+        res.send(result)
+       
+    } catch (error) {
+        console.log({"err":"something went wrong"});
+        console.log(error)
+    }
+})
+
 module.exports={productRouter}

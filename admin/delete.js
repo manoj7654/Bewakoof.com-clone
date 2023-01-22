@@ -2,7 +2,7 @@
 let bag;
 async function getData() {
     try {
-      let res = await fetch("http://localhost:7500/adminproduct/allproducts");
+      let res = await fetch("https://lively-tan-trunks.cyclic.app/adminproduct/allproducts");
       let data = await res.json();
       console.log(data);
       bag=data
@@ -57,7 +57,7 @@ async function getData() {
   async function deletedata(ID){
     console.log(ID)
     try {
-        let response=await fetch(`http://localhost:7500/adminproduct/delete/${ID}`,{
+        let response=await fetch(`https://lively-tan-trunks.cyclic.app/adminproduct/delete/${ID}`,{
             
           method:"DELETE",
           headers:{

@@ -2,7 +2,7 @@
 let bag;
 async function getData() {
     try {
-      let res = await fetch("http://localhost:7500/adminproduct/allproducts");
+      let res = await fetch("https://lively-tan-trunks.cyclic.app/adminproduct/allproducts");
       let data = await res.json();
       console.log(data);
       bag=data
@@ -67,7 +67,7 @@ async function getData() {
   }
   async function update(Id , editObj){
     try {
-        let response=await fetch(`http://localhost:7500/adminproduct/edit/${Id}`,{
+        let response=await fetch(`https://lively-tan-trunks.cyclic.app/adminproduct/edit/${Id}`,{
           method:"PATCH",
           headers:{
             "Content-Type":"application/json",

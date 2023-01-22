@@ -34,6 +34,7 @@
             placeholder="Enter Your Name"
           />
           <input
+          required
             type="text"
             id="mob"
             class="good"
@@ -41,6 +42,7 @@
             placeholder=" Mobile Number"
           />
           <input
+          required
             type="text"
             id="email"
             class="good"
@@ -48,6 +50,7 @@
             placeholder="Email Id"
           />
           <input
+          required
             type="text"
             id="pass"
             class="good"
@@ -84,14 +87,14 @@
   async function userRegister(userObj) {
     console.log(userObj);
     try {
-      let data = await fetch("http://localhost:7500/user/register", {
+      let data = await fetch("https://lively-tan-trunks.cyclic.app/user/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(userObj),
       });
-      return data.json();
+      return await data.json();
     } catch (err) {
       console.log(err);
     }
