@@ -24,8 +24,8 @@
         <h1>Admin Page</h1>
         <p>for Latest trends, exciting offers and everything Clothing Keeda!</p>
         <form action="">
-          <input type="text" id="email" name="email" placeholder="Enter your email" />
-          <input type="text" id="password" name="password" placeholder="Enter your password" />
+          <input type="text" id="email" name="email" placeholder="Enter your email" required/>
+          <input type="text" id="password" name="password" placeholder="Enter your password" required/>
           <input type="Submit" name="" id="btn"  value="Continue"/>
         </form>
        
@@ -44,21 +44,29 @@
       password:admin.password.value
     }
     let data= await signin(adminObj)
-    console.log(data)
-    localStorage.setItem("token",data.AdminToken)
-    alert(data.message)
-    location.replace("../admin/homepage.html")
+    console.log("getting data",data)
+   
+    
+    if(data.message=="Login Success "){
+      localStorage.setItem("token",JSON.stringify(data.AdminToken))
+  
+      window.location.href="./admin/homepage.html"
+      alert(data.message)
+    }else{
+      alert(data.message)
+    }
+    
   }
   async function signin(adminObj){
     try {
-        let result=await fetch("http://localhost:7500/admin/login",{
+        let result=await fetch("https://lively-tan-trunks.cyclic.app/admin/login",{
           method:"POST",
           headers:{
             "Content-Type":"application/json"
           },
           body:JSON.stringify(adminObj)
         })
-        return result.json()
+        return  await result.json()
     } catch (err) {
       console.log(err)
     }

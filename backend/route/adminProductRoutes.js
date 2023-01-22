@@ -64,19 +64,6 @@ adminproduct.delete("/delete/:id", async(req,res)=>
     }
     
 })
-// adminproduct.get("/sort",async(req,res)=>{
-//     let sortby=req.query.sortBy;
-//     let order=req.query.order
-//     try {
-//         if(sortby=="Price"){
-//         let result=await Productmodel.find().sort({Price:order})
-//         res.send(result)
-//         }
-//     } catch (error) {
-//         console.log({"err":"something went wrong"});
-//         console.log(error)
-//     }
-// })
 module.exports={
     adminproduct
 }
