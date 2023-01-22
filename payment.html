@@ -36,8 +36,9 @@
     document.querySelector("#amount").value=Amount
     let placed=document.querySelector("form");
     placed.addEventListener("submit",place);
-    function place()
+    function place(e)
     {
+        e.preventDefault()
         alert("Order Placed");
         location.replace("index.html")
     }
