@@ -55,12 +55,13 @@ adminproduct.delete("/delete/:id", async(req,res)=>
 {
     const Id=req.params.id
     console.log(Id)
-
+           console.log(await Productmodel.findOne({_id:Id}))
     try {
         await Productmodel.findByIdAndDelete({_id:Id})
-        res.json({message:`Product has been delted`})
+        res.json({message:"Product has been deleted"})
     } catch (error) {
-        res.json( {message:"cannot delete "})
+       
+        res.json( {message:"cannot delete ",err:error})
     }
     
 })
