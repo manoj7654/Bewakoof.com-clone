@@ -47,17 +47,18 @@ async function getData() {
   
    async function my(e){
       e.preventDefault()
-      console.log("hii")
+      
      
       let response=await deletedata(deleteData.id.value)
        console.log(response)
-       alert(response.message)
+       alert("Added")
        getData()
   }
   async function deletedata(ID){
     console.log(ID)
+    console.log(localStorage.getItem("token"))
     try {
-        let response=await fetch(`https://lively-tan-trunks.cyclic.app/adminproduct/delete/${ID}`,{
+        let response=await fetch(`http://localhost:7500/adminproduct/delete/${ID}`,{
             
           method:"DELETE",
           headers:{
@@ -66,9 +67,11 @@ async function getData() {
           },
          
         })
+        
+        console.log(await response.json())
         count++;
         localStorage.setItem("count",count)
-        return  response.json()
+        return  await response.json()
         
     } catch (err) {
       console.log(err)
