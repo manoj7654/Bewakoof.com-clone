@@ -16,7 +16,7 @@ adminproduct.get("/allproducts",async(req,res)=>
   
 })
 
-adminproduct.use(adminAuthenticate)
+// adminproduct.use(adminAuthenticate)
 
 adminproduct.post("/create",async(req,res)=>
 {
@@ -55,13 +55,12 @@ adminproduct.delete("/delete/:id", async(req,res)=>
 {
     const Id=req.params.id
     console.log(Id)
-           console.log(await Productmodel.findOne({_id:Id}))
+
     try {
         await Productmodel.findByIdAndDelete({_id:Id})
-        res.json({message:"Product has been deleted"})
+        res.json({message:`Product has been deleted`})
     } catch (error) {
-       
-        res.json( {message:"cannot delete ",err:error})
+        res.json( {message:"cannot delete "})
     }
     
 })

@@ -78,7 +78,7 @@
       password:login.password.value
     }
     let data= await signin(loginObj)
-    console.log(data.message)
+   
    
    if(data.message=="Login Success"){
    
@@ -92,7 +92,7 @@
   }
   async function signin(loginObj){
     try {
-        let result=await fetch("https://lively-tan-trunks.cyclic.app/user/login",{
+        let result=await fetch("https://vast-lime-giraffe-wrap.cyclic.app/user/login",{
           method:"POST",
           headers:{
             "Content-Type":"application/json"
