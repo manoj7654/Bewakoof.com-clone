@@ -17,21 +17,26 @@ body {
     /* border: 1px solid yellow; */
     margin: auto;
 }
+.footer_first h1{
+   padding-top: 50px;
+}
 .footer_first>img{
    padding-top: 100px;
 }
+
 #logo>a{
     color: yellow;
     text-decoration: none;
+   
 }
 .footer_first>div{
   display: flex;
   justify-content: space-around;
 }
-#ul>ul>a>li{
+#ul>.ul>a>li{
     list-style:none;
 }
-#foot_c>div>ul>a>li{
+#foot_c>div>.ul>a>li{
     list-style: none;
   margin-bottom: 20px;
   /* font-weight: bold; */
@@ -76,7 +81,7 @@ padding-left: 20px;
 h1{
     color: yellow;
 }
-ul>a>li{
+.ul>a>li{
     list-style: none;
     margin-bottom: 15px;
  

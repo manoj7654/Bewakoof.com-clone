@@ -13,7 +13,6 @@ body {
     border: 1px solid #ddd;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
     overflow: hidden; 
-     /* border: 5px solid red; */
   }  
  .maincontainer ul li img{
     width: 100%;
@@ -22,7 +21,7 @@ body {
 .maincontainer ul li{
     margin-left: 15px;
 }
-  ul {
+  .u {
     width: 9999%;
     height: 100%;
     list-style: none;
@@ -33,7 +32,7 @@ body {
     transition: all 0.75s ease;
   }
   
-  li {
+  .u li {
     width: 26.66vw;
     height: 100%;
     float: left;
