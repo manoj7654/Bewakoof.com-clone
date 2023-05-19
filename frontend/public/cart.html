@@ -11,16 +11,9 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-   
-    <style>
-       
-    </style>
 </head>
-
 <body>
-   
-
-<div id="navbar"></div>
+    <div id="navbar"></div>
             <div id="line"></div>
             <div id="cont">
                 <div id="cl"></div>
@@ -30,36 +23,40 @@
                     <div id="crbody">
                        <hr>
                         <p class="pp" id="pd">PRICE DETAILS</p>
-                        <Div class="p">
+                        <div class="p">
                             <p>price</p>
                             <p class="price"></p>
-                        </Div>
-                        <Div class="p">
+                        </div>
+                        <div class="p">
                             <p>Savings</p>
                             <p id="savings">0</p>
-                        </Div>
+                        </div>
                         <hr>
-                        <Div class="pp">
+                        <div class="pp">
                             <p>AMOUNT PAYABLE</p>
                             <p id="rice"></p>
-                        </Div>
+                        </div>
                         <button id="checkout" onclick="ch()">CHECKOUT</button>
                     </div>
                   
                 </div>
             </div>
-
-
             <!-- footer start -->
 
-            <footer>
                <div id="footer"></div>
-
+            
     </body>
 
 </html>
+<!-- <script src="../components/navbar.js"></script> -->
+
 <script>
-    let data = JSON.parse(localStorage.getItem("cartProduct"));
+
+    if(token==undefined){
+     alert("Please login first");
+     return
+    }else{
+ let data = JSON.parse(localStorage.getItem("cartProduct"));
     let total = data.reduce(function (acc, ele) {
         return acc + Number(ele.Price);
     }, 0);
@@ -189,7 +186,7 @@ function deleted(_id){
     document.querySelector("#line").innerText = "CLOTHING KEEDA:      Home > Products > Cart";
 
     let search=document.querySelector("#search_button")
-     search.addEventListener("click",res)
+     search.addEventListener("click",res())
 
 function res(){
   let searchData=document.querySelector("#input_box").value;
@@ -206,7 +203,9 @@ function res(){
         location.replace("address.html")
 }
   
+    }
+   
 
 
 </script>
-<script src="../src/index.js"  type="module"></script>
+<script src="../components/footer.js"></script>

@@ -1,51 +1,24 @@
-import { navbar } from "../components/navbar.js"; 
-import {footer} from "../components/footer.js";
-let navbar_div=document.getElementById("navbar");
-navbar_div.innerHTML=navbar();
+// import { navbar } from "../components/navbar"; 
+// import {footer} from "../components/footer";
+// let navbar_div=document.getElementById("navbar");
+// navbar_div.innerHTML=navbar();
+// console.log(navbar)
+
+// let footer_div=document.getElementById("footer")
+// footer_div.innerHTML=footer()
 
 
-let footer_div=document.getElementById("footer")
-footer_div.innerHTML=footer()
+// let top = document.getElementById("navbar").offsetTop;
+// function stickynavbar() {
+//   if (window.scrollY>top) {    
+//     document.getElementById("navbar").classList.add('sticky');
+//   } else {
+//     document.getElementById("navbar").classList.remove('sticky');
+//   }
+// }
+// window.addEventListener('scroll', stickynavbar)
 
 
-let top = document.getElementById("navbar").offsetTop;
-function stickynavbar() {
-  if (window.scrollY > top) {    
-    document.getElementById("navbar").classList.add('sticky');
-  } else {
-    document.getElementById("navbar").classList.remove('sticky');
-  }
-}
-window.addEventListener('scroll', stickynavbar)
-
-
-let men=document.querySelector("#MEN")
-men.addEventListener("click",myfun)
-
- function myfun(){
-
- localStorage.setItem("key","Male");
- 
-}
-
-let women=document.querySelector("#WOMEN")
-women.addEventListener("click",my)
-
- function my(){
-
- localStorage.setItem("key","Female");
- 
-}
-
-let search=document.querySelector("#search_button")
-search.addEventListener("click",data)
-
-function data(){
-  let searchData=document.querySelector("#input_box").value;
-  localStorage.setItem("searchKey",searchData);
-  console.log("Hii")
-  window.location.href="searchProduct.html";  
-}
 
 
 
@@ -95,3 +68,4 @@ window.onload = function() {
   responsiveSlider();
   }
 
+console.log("hii")

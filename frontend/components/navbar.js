@@ -49,4 +49,34 @@ const navbar = () => {
 `;
 };
 
-export { navbar };
+let Navbar=document.getElementById("navbar")
+
+Navbar.innerHTML=navbar()
+
+let men=document.querySelector("#MEN")
+men.addEventListener("click",myfun())
+
+ function myfun(){
+  console.log("hii")
+ localStorage.setItem("key","Male");
+ 
+}
+
+let women=document.querySelector("#WOMEN")
+women.addEventListener("click",my)
+
+ function my(){
+
+ localStorage.setItem("key","Female");
+ 
+}
+
+let search=document.querySelector("#search_button")
+search.addEventListener("click",data)
+
+function data(){
+  let searchData=document.querySelector("#input_box").value;
+  localStorage.setItem("searchKey",searchData);
+  // console.log("Hii")
+  window.location.href="../frontend/public/searchProduct.html";  
+}

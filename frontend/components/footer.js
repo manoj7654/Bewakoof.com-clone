@@ -107,4 +107,6 @@ const footer=()=>{
     </div>
   </div>`
 }
-export {footer}
+let Footer=document.getElementById("footer");
+Footer.innerHTML=null
+Footer.innerHTML=footer()

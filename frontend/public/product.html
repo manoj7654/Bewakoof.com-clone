@@ -69,7 +69,7 @@
    let bag;
     async function getData() {
   try {
-    let res = await fetch(`https://vast-lime-giraffe-wrap.cyclic.app/product/${gender}`);
+    let res = await fetch(`https://ill-blue-gosling-coat.cyclic.app/product/${gender}`);
     let data = await res.json();
     console.log(data);
     bag=data
@@ -120,7 +120,7 @@ function displayData(bag) {
         alert("Product added")
        }
     }
-    console.log(count)
+   //  console.log(count)
     div.append(img, Title, Brand, MRP, price,Id);
     document.querySelector("#right").append(div);
   });
@@ -211,3 +211,5 @@ function sort(){
 
 </script>
 <script src="../src/index.js" type="module"></script>
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
