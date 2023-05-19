@@ -107,20 +107,13 @@
             let pri = data[i].Mrp;
             
             let remove=document.createElement("button")
-            remove.innerText="Remove"
-            remove.style.backgroundColor="red"
+            // remove.innerText="Remove"
+            remove.innerHTML=`<i class="fa-solid fa-trash"></i>`
+            // remove.style.backgroundColor="red"
+            remove.classList="del"
             remove.addEventListener("click",(e)=>{
                 deleted(data[i]._id)
-                // console.log(data[i]._id)
-            //  deleted.splice(data)
-            //  localStorage.setItem("remove",JSON.stringify(data))
-            //     console.log("hii")
             })
-            // function rem(id){
-            //     data.splice(data[i],1)
-            //     localStorage.setItem("remove",JSON.stringify(data))
-            //     display(data)
-            // }
             let h2 = document.createElement("h2");
             h2.innerText = "₹" + pri;
             let p2 = document.createElement("p");
@@ -209,7 +202,7 @@ function res(){
 
     function ch(){
         let amount=document.querySelector("#rice").innerText
-localStorage.setItem("Amount",amount);
+       localStorage.setItem("Amount",amount);
         location.replace("address.html")
 }
   

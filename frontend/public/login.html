@@ -81,8 +81,9 @@
    
    
    if(data.message=="Login Success"){
-   
+   console.log(data.username)
     localStorage.setItem("token",data.token)
+    localStorage.setItem("username",data.username)
     alert(data.message)
    location.replace("index.html")
    }else{
@@ -92,7 +93,7 @@
   }
   async function signin(loginObj){
     try {
-        let result=await fetch("https://vast-lime-giraffe-wrap.cyclic.app/user/login",{
+        let result=await fetch("http://localhost:7500/user/login",{
           method:"POST",
           headers:{
             "Content-Type":"application/json"

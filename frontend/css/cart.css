@@ -129,11 +129,11 @@
             cursor: pointer;
         }
 
-        #cl>div>div:nth-child(2)>button:hover {
+        /* #cl>div>div:nth-child(2)>button:hover {
             cursor: pointer;
             background-color: yellow;
             border: 0px;
-        }
+        } */
 
         #cl>div>div:nth-child(2)>input {
             width: 30px;
@@ -149,3 +149,11 @@
             height: 25px;
             /* font-size: smaller; */
         }
+
+        .del{
+            margin-left: 20px;
+            /* margin-top: 500px; */
+        }
+        /* .fa-solid{
+            margin-top: 100px;
+        } */
