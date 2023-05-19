@@ -15,8 +15,8 @@ const navbar = () => {
       <div class="navbar_first">
         <div id="img"><a href="../index.html"><img src="https://www.linkpicture.com/q/00000.png" alt=""></a></div>
         <div id="menu">
-            <a id="MEN" href="../frontend/public/product.html">MEN</a>
-            <a id="WOMEN" href="../frontend/public/product.html">WOMEN</a>
+            <a id="MEN" href="./public/product.html">MEN</a>
+            <a id="WOMEN" href="./public/product.html">WOMEN</a>
         <a href="../frontend/public/product.html">MOBILE COVERS</a>
         </div>
       </div>

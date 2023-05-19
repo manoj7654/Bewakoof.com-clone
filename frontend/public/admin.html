@@ -28,7 +28,7 @@
           <input type="text" id="password" name="password" placeholder="Enter your password" required/>
           <input type="Submit" name="" id="btn"  value="Continue"/>
         </form>
-      
+     
     </div>
   </body>
 </html>
@@ -46,7 +46,7 @@
     let data= await signin(adminObj)
     if(data.message=="Login Success"){
       localStorage.setItem("token",JSON.stringify(data.AdminToken))
-      window.location.href="/frontend/admin/index.html"
+      window.location.href="../public/homepage.html"
       alert(data.message)
     }else{
       alert(data.message)
