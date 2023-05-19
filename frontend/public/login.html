@@ -63,6 +63,7 @@
         </p>
       </div>
     </div>
+    
     <!-- <div id="footer"></div> -->
   </body>
 </html>
@@ -85,7 +86,7 @@
     localStorage.setItem("token",data.token)
     localStorage.setItem("username",data.username)
     alert(data.message)
-   location.replace("index.html")
+   location.replace("../index.html")
    }else{
     alert(data.message)
    }
@@ -93,7 +94,7 @@
   }
   async function signin(loginObj){
     try {
-        let result=await fetch("http://localhost:7500/user/login",{
+        let result=await fetch("https://ill-blue-gosling-coat.cyclic.app/user/login",{
           method:"POST",
           headers:{
             "Content-Type":"application/json"

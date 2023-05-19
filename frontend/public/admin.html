@@ -28,7 +28,7 @@
           <input type="text" id="password" name="password" placeholder="Enter your password" required/>
           <input type="Submit" name="" id="btn"  value="Continue"/>
         </form>
-       
+      
     </div>
   </body>
 </html>
@@ -46,7 +46,7 @@
     let data= await signin(adminObj)
     if(data.message=="Login Success"){
       localStorage.setItem("token",JSON.stringify(data.AdminToken))
-      window.location.href="./admin/homepage.html"
+      window.location.href="/frontend/admin/homepage.html"
       alert(data.message)
     }else{
       alert(data.message)
@@ -55,7 +55,7 @@
   }
   async function signin(adminObj){
     try {
-        let result=await fetch("https://vast-lime-giraffe-wrap.cyclic.app/admin/login",{
+        let result=await fetch("https://ill-blue-gosling-coat.cyclic.app/admin/login",{
           method:"POST",
           headers:{
             "Content-Type":"application/json"

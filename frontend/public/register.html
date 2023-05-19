@@ -61,6 +61,7 @@
           <input type="Submit" name="" id="btn" value="PROCEED" />
         </form>
         <p id="user"><a href="login.html">Existing User? Log In</a></p>
+       
       </div>
     </div>
     <!-- <div id="footer"></div> -->
@@ -88,7 +89,7 @@
   async function userRegister(userObj) {
     console.log(userObj);
     try {
-      let data = await fetch("https://vast-lime-giraffe-wrap.cyclic.app/user/register", {
+      let data = await fetch("https://ill-blue-gosling-coat.cyclic.app/user/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
