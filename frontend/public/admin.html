@@ -46,7 +46,7 @@
     let data= await signin(adminObj)
     if(data.message=="Login Success"){
       localStorage.setItem("token",JSON.stringify(data.AdminToken))
-      window.location.href="/frontend/admin/homepage.html"
+      window.location.href="/frontend/admin/index.html"
       alert(data.message)
     }else{
       alert(data.message)
