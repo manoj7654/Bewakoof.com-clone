@@ -40,10 +40,10 @@ const navbar = () => {
 <div class="bottom">
     <div class="bottom_first">
          <a href="">LIVE NOW!</a>
-         <a href="product.html">MEN</a>
-         <a href="product.html">WOMEN</a>
-         <a href="product.html">ACCESSORIES</a>
-         <a href="Product.html">WINTER WEAR</a>
+         <a href="./public/product.html">MEN</a>
+         <a href="./public/product.html">WOMEN</a>
+         <a href="./public/product.html">ACCESSORIES</a>
+         <a href="./public/product.html">WINTER WEAR</a>
     </div>
 </div>
 `;
