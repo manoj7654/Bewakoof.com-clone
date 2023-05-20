@@ -52,10 +52,6 @@
 
 <script>
 
-    if(token==undefined){
-     alert("Please login first");
-     return
-    }else{
  let data = JSON.parse(localStorage.getItem("cartProduct"));
     let total = data.reduce(function (acc, ele) {
         return acc + Number(ele.Price);
@@ -125,8 +121,9 @@
                     total = total - Number(data[i].Mrp);
                     document.querySelector("#rice").innerText = "₹" + total;
                     document.querySelector(".price").innerText = "₹" + total;
-
+                    // document.querySelector("#savings").innerText ="- ₹"+(total-totalMrp)*count;
                 }
+               
             })
             b2.addEventListener("click", function () {
                 count++;
@@ -136,11 +133,12 @@
                 p2.innerText = "MRP ₹" + data[i].Price * count;
 
                 total = total + Number(data[i].Mrp);
-                console.log(total);
+                // console.log(total);
                 document.querySelector("#rice").innerText = "₹" + total;
                 document.querySelector(".price").innerText = "₹" + total;
+               
             })
-
+            
             d2.append(h3, p1, b1, inp, b2,remove);
             let d3 = document.createElement("div");
 
@@ -203,9 +201,5 @@ function res(){
         location.replace("address.html")
 }
   
-    }
-   
-
-
 </script>
 <script src="../components/footer.js"></script>

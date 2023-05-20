@@ -17,7 +17,7 @@ const navbar = () => {
         <div id="menu">
             <a id="MEN" href="./public/product.html">MEN</a>
             <a id="WOMEN" href="./public/product.html">WOMEN</a>
-        <a href="../frontend/public/product.html">MOBILE COVERS</a>
+        <a href="./public/product.html">MOBILE COVERS</a>
         </div>
       </div>
       <div class="navbar_second">
@@ -27,6 +27,7 @@ const navbar = () => {
             <button id="search_button">Search</button>
           
          <a href="./public/login.html"> <i class="fa-solid fa-user"></i></a>
+      
         </div>
        <div class="icon">
         <a href=""> <i class="fa-solid fa-heart"></i></a>
@@ -80,3 +81,11 @@ function data(){
   // console.log("Hii")
   window.location.href="../frontend/public/searchProduct.html";  
 }
+
+// let Name=localStorage.getItem("username")
+// console.log(Name)
+// let username=document.getElementById("name");;
+// username.innerText=Name
+
+
+//    <p id="name"></p>

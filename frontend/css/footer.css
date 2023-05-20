@@ -23,10 +23,13 @@ body {
 .footer_first>img{
    padding-top: 100px;
 }
-
+#logo{
+    margin-top: 10px;
+}
 #logo>a{
     color: yellow;
     text-decoration: none;
+  
    
 }
 .footer_first>div{
@@ -35,6 +38,9 @@ body {
 }
 #ul>.ul>a>li{
     list-style:none;
+}
+#foot_c{
+    margin-top: 30px;
 }
 #foot_c>div>.ul>a>li{
     list-style: none;
