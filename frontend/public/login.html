@@ -78,18 +78,7 @@
       email:login.email.value,
       password:login.password.value
     }
-    let data= await signin(loginObj)
-   
-   
-   if(data.message=="Login Success"){
-   console.log(data.username)
-    localStorage.setItem("token",data.token)
-    localStorage.setItem("username",data.username)
-    alert(data.message)
-   location.replace("../index.html")
-   }else{
-    alert(data.message)
-   }
+    signin(loginObj)
    
   }
   async function signin(loginObj){
@@ -101,7 +90,15 @@
           },
           body:JSON.stringify(loginObj)
         })
-        return await result.json()
+        const res=await result.json();
+        if(result.ok){
+          alert(res.message);
+          localStorage.setItem("token",res.token)
+          localStorage.setItem("username",res.name)
+          window.location.href="../index.html"
+        }else{
+          alert(res.message)
+        }
     } catch (err) {
       console.log(err)
     }
